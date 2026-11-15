@@ -344,8 +344,8 @@ button { font: inherit; color: inherit; }
 .pk-add { width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; text-align: left; padding: 9px 10px; border-radius: 10px; border: 1px dashed var(--hair-strong); background: none; cursor: pointer; }
 
 /* ---------- Toast ---------- */
-.toast { position: fixed; z-index: 60; left: 50%; bottom: calc(var(--tabs-h) + 16px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; display: flex; align-items: center; gap: 12px; max-width: calc(100vw - 32px); padding: 10px 14px; border-radius: 999px; background: var(--text); color: var(--ground); font-family: var(--f-display); font-weight: 700; font-size: 14px; box-shadow: var(--shadow); }
-.toast.on { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.toast { position: fixed; z-index: 60; left: 50%; bottom: calc(var(--tabs-h) + 16px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s, transform .18s, visibility 0s .18s; display: flex; align-items: center; gap: 12px; max-width: calc(100vw - 32px); padding: 10px 14px; border-radius: 999px; background: var(--text); color: var(--ground); font-family: var(--f-display); font-weight: 700; font-size: 14px; box-shadow: var(--shadow); }
+.toast.on { opacity: 1; visibility: visible; transform: translate(-50%, 0); pointer-events: auto; transition-delay: 0s; }
 .toast-act { border: 0; background: none; color: var(--yellow); font-weight: 900; cursor: pointer; padding: 4px; }
 
 @media (prefers-reduced-motion: reduce) {
