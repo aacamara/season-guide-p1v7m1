@@ -74,7 +74,7 @@ export function fillWeather(el, iso, sunsetData) {
   forecast().then(days => {
     const day = days && days[iso];
     if (!day) {
-      el.innerHTML = `<span class="w-main muted">${esc(navigator.onLine === false ? t("weatherOff") : t("weatherNone"))}</span>${sunLine(fallbackSun, true)}`;
+      el.innerHTML = `<span class="w-main muted">${esc(days ? t("weatherNone") : t("weatherOff"))}</span>${sunLine(fallbackSun, true)}`;
       return;
     }
     const tips = [];

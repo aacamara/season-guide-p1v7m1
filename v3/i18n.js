@@ -33,7 +33,7 @@ const S = {
   // Weather
   weatherLoading: ["Checking the forecast…", "Prévisions en cours…"],
   weatherNone: ["Forecast shows up 2 weeks ahead.", "Les prévisions s'affichent 2 semaines avant."],
-  weatherOff: ["Forecast unavailable offline.", "Prévisions indisponibles hors ligne."],
+  weatherOff: ["Forecast unavailable right now.", "Prévisions indisponibles pour le moment."],
   uvHigh: ["UV {uv}: shade from 11:00 to 16:00, hats on", "UV {uv} : à l'ombre de 11:00 à 16:00, chapeaux"],
   windy: ["Windy ({w} km/h): boat crossings may be choppy", "Venteux ({w} km/h) : traversées en bateau agitées"],
   rain: ["Rain chance {p}%", "Risque de pluie {p} %"],
