@@ -1,7 +1,7 @@
 /* Offline support. Version and precache list are stamped in by build_v3.py.
    App files: cache first. data.json: network first so updates arrive. Fonts: stale while revalidate.
    Photos from other sites: cache first, capped, because opaque responses use a lot of quota. */
-const VERSION = "f6d3d193b1";
+const VERSION = "227cf7a4cd";
 const SHELL = ["./", "index.html", "styles.css", "app.js", "data.json", "details.json", "manifest.webmanifest", "icon-192.png", "icon-512.png", "img/almadies.webp", "img/bandia.webp", "img/divinite.webp", "img/djoudj.webp", "img/goree.webp", "img/grande-mosquee.webp", "img/hann.webp", "img/kayar.webp", "img/lac-rose.webp", "img/madeleine.webp", "img/maison-esclaves.webp", "img/mamelles.webp", "img/monod.webp", "img/monument.webp", "img/musee-femme.webp", "img/musee-historique.webp", "img/ngor.webp", "img/saint-louis.webp", "img/sorano.webp", "img/village-arts.webp", "img/yoff.webp"];
 const C_SHELL = "dkr3-shell-" + VERSION, C_IMG = "dkr3-img", C_FONT = "dkr3-font";
 const IMG_MAX = 60;
