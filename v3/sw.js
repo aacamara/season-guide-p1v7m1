@@ -1,8 +1,8 @@
 /* Offline support. Version and precache list are stamped in by build_v3.py.
    App files: cache first. data.json: network first so updates arrive. Fonts: stale while revalidate.
    Photos from other sites: cache first, capped, because opaque responses use a lot of quota. */
-const VERSION = "da1fbd54ad";
-const SHELL = ["./", "index.html", "styles.css", "data.json", "manifest.webmanifest", "icon-192.png", "icon-512.png", "app.js", "cards.js", "explore.js", "i18n.js", "mapview.js", "picks.js", "planner.js", "share.js", "sheet.js", "state.js", "today.js", "util.js", "weather.js", "img/almadies.webp", "img/bandia.webp", "img/divinite.webp", "img/djoudj.webp", "img/goree.webp", "img/grande-mosquee.webp", "img/hann.webp", "img/kayar.webp", "img/lac-rose.webp", "img/madeleine.webp", "img/maison-esclaves.webp", "img/mamelles.webp", "img/monod.webp", "img/monument.webp", "img/musee-femme.webp", "img/musee-historique.webp", "img/ngor.webp", "img/saint-louis.webp", "img/sorano.webp", "img/village-arts.webp", "img/yoff.webp"];
+const VERSION = "f6d3d193b1";
+const SHELL = ["./", "index.html", "styles.css", "app.js", "data.json", "details.json", "manifest.webmanifest", "icon-192.png", "icon-512.png", "img/almadies.webp", "img/bandia.webp", "img/divinite.webp", "img/djoudj.webp", "img/goree.webp", "img/grande-mosquee.webp", "img/hann.webp", "img/kayar.webp", "img/lac-rose.webp", "img/madeleine.webp", "img/maison-esclaves.webp", "img/mamelles.webp", "img/monod.webp", "img/monument.webp", "img/musee-femme.webp", "img/musee-historique.webp", "img/ngor.webp", "img/saint-louis.webp", "img/sorano.webp", "img/village-arts.webp", "img/yoff.webp"];
 const C_SHELL = "dkr3-shell-" + VERSION, C_IMG = "dkr3-img", C_FONT = "dkr3-font";
 const IMG_MAX = 60;
 
@@ -25,7 +25,7 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin === location.origin) {
-    if (url.pathname.endsWith("/data.json")) {
+    if (url.pathname.endsWith("/data.json") || url.pathname.endsWith("/details.json")) {
       e.respondWith(fetch(req).then(r => { const copy = r.clone(); caches.open(C_SHELL).then(c => c.put(req, copy)); return r; })
         .catch(() => caches.match(req)));
       return;
